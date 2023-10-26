@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2>Employee List</h2>
+    <table class="table table-striped" *ngIf='employees.length'>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact Number</th>
+                <th>Birth Date</th>
+                <th>Joining Date</th>
+                <th>Leaving Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let employee of employees'>
+                <td>{{employee.employeeId}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.employeeNum}}</td>
+                <td>{{employee.birthDate}}</td>
+                <td>{{employee.employedDate}}</td>
+                <td>{{employee.terminationDate}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
